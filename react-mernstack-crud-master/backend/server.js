@@ -9,19 +9,20 @@ const studentRoute = require("./routes/student.route");
 const teacherRoute = require("./routes/teacher.routes");
 
 // Connecting mongoDB Database
-mongoose.Promise = global.Promise;
-mongoose
-  .connect(dbConfig.db, {
+const uri = 'mongodb+srv://Aiyush:nqL8kOn6qvRvBBaG@cluster0.gkrk0.mongodb.net/test?retryWrites=true&w=majority'
+try {
+   mongoose.connect(uri,{
     useNewUrlParser: true,
-  })
-  .then(
-    () => {
-      console.log("Database sucessfully connected!");
-    },
-    (error) => {
-      console.log("Could not connect to database : " + error);
-    }
-  );
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+
+  });
+
+  console.log("MongoDB Connected:", mongoose.connection.host);
+} catch (error) {
+  console.error("MongoDB Connection Error:", error);
+}
 
 const app = express();
 app.use(bodyParser.json());
