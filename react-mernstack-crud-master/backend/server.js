@@ -9,7 +9,7 @@ const studentRoute = require("./routes/student.route");
 const teacherRoute = require("./routes/teacher.routes");
 
 // Connecting mongoDB Database
-const uri = 'mongodb+srv://Aiyush:nqL8kOn6qvRvBBaG@cluster0.gkrk0.mongodb.net/test?retryWrites=true&w=majority'
+const uri = "mongodb://127.0.0.1:27017/form"
 try {
    mongoose.connect(uri,{
     useNewUrlParser: true,

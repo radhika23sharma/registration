@@ -3,7 +3,7 @@ require("dotenv").config()
 
 const connectDB = async () => {
 
-  const uri = 'mongodb+srv://Aiyush:nqL8kOn6qvRvBBaG@cluster0.gkrk0.mongodb.net/test?retryWrites=true&w=majority'
+  const uri = 'mongodb://127.0.0.1:27017/form'
   try {
     console.log(uri,"11111111111")
     await mongoose.connect(uri.toString(),{
